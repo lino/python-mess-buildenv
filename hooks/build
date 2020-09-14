@@ -1,0 +1,11 @@
+#!/bin/bash
+# build hook
+# Reads build.conf settings file and injects PYTHONVERSION as build-arg
+
+if [ -f build.conf ]
+then
+    source build.conf
+fi
+
+docker build --build-arg PYTHONVERSION=$PYTHONVERSION -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+

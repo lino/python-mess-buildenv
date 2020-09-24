@@ -69,5 +69,7 @@ else
     echo "Dry-run: skipped git push origin $BRANCH"
 fi
 
+git switch master
+
 echo "Done"
 
